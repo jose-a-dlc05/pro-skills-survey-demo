@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import InputField from './components/InputField/InputField.component';
 import Cards from './components/Cards/Cards.component';
+
 import './App.css';
 
 function App() {
