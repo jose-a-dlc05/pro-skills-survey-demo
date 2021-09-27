@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { MDBRange } from 'mdb-react-ui-kit';
+import './Card.styles.css';
 
 function SkillCard({ skill }) {
 	const [importanceRange, setImportanceRange] = useState(0);
@@ -33,6 +34,7 @@ function SkillCard({ skill }) {
 						fontWeight: 'bold',
 						fontSize: '1.2em',
 						textDecoration: 'underline',
+						marginBottom: '10px',
 					}}
 				>
 					{skill}
@@ -44,6 +46,7 @@ function SkillCard({ skill }) {
 					step='1'
 					id='skillsRange1'
 					label='Important to Organization'
+					className='range--slider'
 					onChange={onChangeImportance}
 				/>
 				<MDBRange
@@ -53,6 +56,7 @@ function SkillCard({ skill }) {
 					step='1'
 					id='skillsRange2'
 					label='Level at the organization'
+					className='range--slider'
 					onChange={onChangeOrg}
 				/>
 				<MDBRange
@@ -62,6 +66,7 @@ function SkillCard({ skill }) {
 					step='1'
 					id='skillsRange3'
 					label='Level within the department'
+					className='range--slider'
 					onChange={onChangeDepartment}
 				/>
 			</Card.Body>
