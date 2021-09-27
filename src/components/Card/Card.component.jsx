@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
-import MultiSlider from '../MultiSlider/MultiSlider.component';
+import { MDBRange } from 'mdb-react-ui-kit';
+import './Card.styles.css';
 
 function SkillCard({ skill }) {
+	const [importanceRange, setImportanceRange] = useState(0);
+	const [orgRange, setOrgRange] = useState(0);
+	const [deptRange, setDeptRange] = useState(0);
+
+	const onChangeImportance = (e) => {
+		setImportanceRange(e.target.value);
+	};
+	const onChangeOrg = (e) => {
+		setOrgRange(e.target.value);
+	};
+	const onChangeDepartment = (e) => {
+		setDeptRange(e.target.value);
+	};
+
 	return (
 		<Card
 			style={{
@@ -19,16 +34,41 @@ function SkillCard({ skill }) {
 						fontWeight: 'bold',
 						fontSize: '1.2em',
 						textDecoration: 'underline',
+						marginBottom: '10px',
 					}}
 				>
 					{skill}
 				</Card.Title>
-				<Card.Text>Important to Organization</Card.Text>
-				<MultiSlider />
-				<Card.Text>Level at the organization</Card.Text>
-				<MultiSlider />
-				<Card.Text>Level within the department</Card.Text>
-				<MultiSlider />
+				<MDBRange
+					value={importanceRange}
+					min='0'
+					max='5'
+					step='1'
+					id='skillsRange1'
+					label='Important to Organization'
+					className='range--slider'
+					onChange={onChangeImportance}
+				/>
+				<MDBRange
+					value={orgRange}
+					min='0'
+					max='5'
+					step='1'
+					id='skillsRange2'
+					label='Level at the organization'
+					className='range--slider'
+					onChange={onChangeOrg}
+				/>
+				<MDBRange
+					value={deptRange}
+					min='0'
+					max='5'
+					step='1'
+					id='skillsRange3'
+					label='Level within the department'
+					className='range--slider'
+					onChange={onChangeDepartment}
+				/>
 			</Card.Body>
 		</Card>
 	);

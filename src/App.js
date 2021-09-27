@@ -1,6 +1,8 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import InputField from './components/InputField/InputField.component';
 import Cards from './components/Cards/Cards.component';
+import { MDBProgress, MDBProgressBar } from 'mdb-react-ui-kit';
+
 import './App.css';
 
 function App() {
@@ -9,6 +11,16 @@ function App() {
 			<Row>
 				<Col>
 					<h1>Professional Skills Survey</h1>
+					<MDBProgress height='20' className='mdb-progress-container'>
+						<MDBProgressBar
+							width='25'
+							valuemin={0}
+							valuemax={100}
+							className='mdb-progress-bar'
+						>
+							25%
+						</MDBProgressBar>
+					</MDBProgress>
 					<InputField inputname='Name' placeholder='Enter your name' />
 					<br />
 					<InputField inputname='Company Name' placeholder='Enter org. name' />

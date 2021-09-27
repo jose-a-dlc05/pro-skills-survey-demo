@@ -2,9 +2,6 @@
 	text-align: center;
 }
 
-.skills-input {
-}
-
 .skills-input.header {
 	background-color: #b3b1b1;
 	border-top-left-radius: 5px;
@@ -22,4 +19,20 @@
 	outline: 0;
 	padding: 6px 10px;
 	border-width: 1px;
+}
+
+.mdb-progress-container {
+	margin: 0.7rem auto;
+	background-color: #b3b1b1;
+	width: 50%;
+	color: #fff;
+	border-radius: 10px;
+	position: relative;
+}
+
+.mdb-progress-bar {
+	background-color: #1266f1;
+	border-radius: 10px;
+	position: absolute;
+	top: 1px;
 }
