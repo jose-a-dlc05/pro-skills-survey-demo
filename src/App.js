@@ -1,3 +1,6 @@
+import React, { useState, useEffect } from 'react';
+import db from './firebase-config';
+import { collection, getDocs } from '@firebase/firestore';
 import { Container, Row, Col } from 'react-bootstrap';
 import InputField from './components/InputField/InputField.component';
 import Cards from './components/Cards/Cards.component';
@@ -7,6 +10,17 @@ import { MDBProgress, MDBProgressBar } from 'mdb-react-ui-kit';
 import './App.css';
 
 function App() {
+	const surveyCollectionRef = collection(db, 'survey');
+
+	useEffect(() => {
+		const getSurveys = async () => {
+			const data = await getDocs(surveyCollectionRef);
+			console.log(data.docs[0].data());
+		};
+
+		getSurveys();
+	});
+
 	return (
 		<Container fluid className='App'>
 			<Row>
