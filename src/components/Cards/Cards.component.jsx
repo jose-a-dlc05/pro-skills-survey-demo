@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack } from 'react-bootstrap';
 import Card from '../Card/Card.component';
 
-const Cards = ({ skill }) => {
+const Cards = ({ skills }) => {
 	return (
 		<Stack gap={3}>
 			<div
@@ -15,12 +15,9 @@ const Cards = ({ skill }) => {
 					justifyContent: 'space-around',
 				}}
 			>
-				<Card skill={skill} />
-				<Card skill={skill} />
-				<Card skill={skill} />
-				<Card skill={skill} />
-				<Card skill={skill} />
-				<Card skill={skill} />
+				{skills.map((skill) => (
+					<Card key={skill.id} skill={skill} />
+				))}
 			</div>
 		</Stack>
 	);

@@ -12,7 +12,6 @@ function App() {
 			<Row>
 				<Col>
 					<h1>Professional Skills Survey</h1>
-					<Pagination />
 					<MDBProgress height='20' className='mdb-progress-container'>
 						<MDBProgressBar
 							width='25'
@@ -37,7 +36,28 @@ function App() {
 					important the following skills:
 					<br />
 				</h4>
-				<Cards skill='Confidence' />
+				<Cards
+					skills={[
+						'Accountability',
+						'Analytical Skills',
+						'Coaching',
+						'Confidence',
+						'Creativity',
+						'Goal Setting',
+						'Inspirational Abilities',
+						'Mentorship',
+						'Motivational Skills',
+						'People Management',
+						'Politeness',
+						'Prioritization',
+						'Project Management',
+						'Stress Management',
+					]}
+				/>
+			</Row>
+			<Row>
+				<Pagination />
+				<button>Submit</button>
 			</Row>
 		</Container>
 	);
