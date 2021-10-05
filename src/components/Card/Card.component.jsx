@@ -26,6 +26,7 @@ function SkillCard({ skill }) {
 				border: '1px solid black',
 				borderRadius: '10px',
 				padding: '2em',
+				marginTop: '10px',
 			}}
 		>
 			<Card.Body>
