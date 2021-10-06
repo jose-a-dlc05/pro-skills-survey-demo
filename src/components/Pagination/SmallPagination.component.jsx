@@ -1,7 +1,14 @@
 import React from 'react';
+import './SmallPagination.style.css';
 
 function SmallPagination() {
-	return <nav>Pagination Here</nav>;
+	return (
+		<div className='pagination'>
+			<span>&laquo;</span>
+			<span>1</span>
+			<span>&raquo;</span>
+		</div>
+	);
 }
 
 export default SmallPagination;
