@@ -1,6 +1,6 @@
 import { InputGroup, FormControl } from 'react-bootstrap';
 
-const InputField = ({ inputname, placeholder }) => {
+const InputField = ({ inputname, placeholder, onChange }) => {
 	return (
 		<InputGroup className='mb-3'>
 			<InputGroup.Text
@@ -15,6 +15,7 @@ const InputField = ({ inputname, placeholder }) => {
 				type='text'
 				placeholder={placeholder}
 				className='skills-input form'
+				onChange={onChange}
 			/>
 		</InputGroup>
 	);

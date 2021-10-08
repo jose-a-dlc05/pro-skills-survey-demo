@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 import { MDBRange } from 'mdb-react-ui-kit';
 import './Card.styles.css';
 
-function SkillCard({ skill }) {
+function SkillCard({ skill, onChange }) {
 	const [importanceRange, setImportanceRange] = useState(0);
 	const [orgRange, setOrgRange] = useState(0);
 	const [deptRange, setDeptRange] = useState(0);
@@ -17,6 +17,8 @@ function SkillCard({ skill }) {
 	const onChangeDepartment = (e) => {
 		setDeptRange(e.target.value);
 	};
+
+	console.log(onChange);
 
 	return (
 		<Card

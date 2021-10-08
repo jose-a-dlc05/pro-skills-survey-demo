@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack } from 'react-bootstrap';
 import Card from '../Card/Card.component';
 
-const Cards = ({ skills }) => {
+const Cards = ({ skills, onChange }) => {
 	return (
 		<Stack gap={3}>
 			<div
@@ -16,7 +16,7 @@ const Cards = ({ skills }) => {
 				}}
 			>
 				{skills.map((skill) => (
-					<Card key={skill.id} skill={skill} />
+					<Card key={skill.id} skill={skill} onChange={onChange} />
 				))}
 			</div>
 		</Stack>
