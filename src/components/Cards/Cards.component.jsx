@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Stack } from 'react-bootstrap';
 import Card from '../Card/Card.component';
+import map from 'lodash/map';
 
-const Cards = ({ skills, onChange }) => {
+const Cards = ({ skills, handleDataChange }) => {
 	return (
 		<Stack gap={3}>
 			<div
@@ -15,8 +16,8 @@ const Cards = ({ skills, onChange }) => {
 					justifyContent: 'space-around',
 				}}
 			>
-				{skills.map((skill) => (
-					<Card key={skill.id} skill={skill} onChange={onChange} />
+				{Object.entries(skills).map(([key, value]) => (
+					<Card skill={[key, value]} />
 				))}
 			</div>
 		</Stack>
