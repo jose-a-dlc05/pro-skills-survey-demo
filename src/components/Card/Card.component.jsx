@@ -3,35 +3,35 @@ import { Card } from 'react-bootstrap';
 import { MDBRange } from 'mdb-react-ui-kit';
 import './Card.styles.css';
 
-function SkillCard({ skill, handleDataChange }) {
+function SkillCard({ skill, handleSkillsChange }) {
 	const [skillName, setSkillName] = useState(skill[0]);
-	const [importanceRange, setImportanceRange] = useState(skill[1][0]);
-	const [orgRange, setOrgRange] = useState(skill[1][1]);
-	const [deptRange, setDeptRange] = useState(skill[1][2]);
+	const [importanceRange, setImportanceRange] = useState(skill[1].self);
+	const [orgRange, setOrgRange] = useState(skill[1].organization);
+	const [deptRange, setDeptRange] = useState(skill[1].department);
 
 	const onChangeImportance = (e) => {
 		setImportanceRange(Number(e.target.value));
-		// tellWorld();
+		changeScore();
 	};
 	const onChangeOrg = (e) => {
 		setOrgRange(Number(e.target.value));
-		// tellWorld();
+		changeScore();
 	};
 	const onChangeDepartment = (e) => {
 		setDeptRange(Number(e.target.value));
-		// tellWorld();
+		changeScore();
 	};
 
-	console.log(skillName, importanceRange, orgRange, deptRange);
+	const changeScore = () => {
+		const updatedSkill = {
+			skillName,
+			importanceRange,
+			orgRange,
+			deptRange,
+		};
+		handleSkillsChange(updatedSkill);
+	};
 
-	// const tellWorld = () => {
-	// 	handleDataChange({
-	// 		skill,
-	// 		importanceRange,
-	// 		orgRange,
-	// 		deptRange,
-	// 	});
-	// };
 	return (
 		<Card
 			style={{

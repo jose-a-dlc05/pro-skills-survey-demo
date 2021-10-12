@@ -4,9 +4,9 @@ export const initSurvey = {
 		org_name: '',
 		dept_name: '',
 		skills: {
-			confidence: [0, 0, 0],
-			'people management': [0, 0, 0],
-			accountability: [0, 0, 0],
+			confidence: { department: 0, organization: 0, self: 0 },
+			'people management': { department: 0, organization: 0, self: 0 },
+			accountability: { department: 0, organization: 0, self: 0 },
 		},
 	},
 };

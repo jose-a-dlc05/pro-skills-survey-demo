@@ -43,16 +43,6 @@ function App() {
 		setDeptName(newValue);
 	};
 
-	// const handleDataChange = (skillData) => {
-	// 	let updateData = { ...survey.data };
-	// 	updateData[skillData.skill] = [
-	// 		skillData.importanceRange,
-	// 		skillData.orgRange,
-	// 		skillData.deptRange,
-	// 	];
-	// 	setData([updateData]);
-	// };
-
 	// Submit Data to Firebase
 	const handleSubmit = (e) => {
 		e.preventDefault();

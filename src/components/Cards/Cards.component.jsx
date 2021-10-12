@@ -1,9 +1,30 @@
 import React, { useState } from 'react';
 import { Stack } from 'react-bootstrap';
 import Card from '../Card/Card.component';
-import map from 'lodash/map';
 
-const Cards = ({ skills, handleDataChange }) => {
+const Cards = ({ skills }) => {
+	const [skillsObject, setSkillsObject] = useState(skills);
+	const handleSkillsChange = (skills) => {
+		// console.log('Card Skill ->', skills);
+		let objectName = skills.skillName;
+		const { deptRange, orgRange, importanceRange } = skills;
+		let updatedData = {
+			...skillsObject,
+			[objectName]: {
+				department: deptRange,
+				organization: orgRange,
+				self: importanceRange,
+			},
+		};
+		setSkillsObject(updatedData);
+	};
+	/**
+	 * updatedData = {
+	 * 	accountability: [2, 0, 4],
+	 *  people management: [1, 3, 2],
+	 *  confidence: [4, 2, 1]
+	 * }
+	 */
 	return (
 		<Stack gap={3}>
 			<div
@@ -16,8 +37,12 @@ const Cards = ({ skills, handleDataChange }) => {
 					justifyContent: 'space-around',
 				}}
 			>
-				{Object.entries(skills).map(([key, value]) => (
-					<Card skill={[key, value]} />
+				{Object.entries(skillsObject).map(([key, value]) => (
+					<Card
+						key={key}
+						skill={[key, value]}
+						handleSkillsChange={handleSkillsChange}
+					/>
 				))}
 			</div>
 		</Stack>
