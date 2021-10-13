@@ -18,7 +18,6 @@ function App() {
 	const [orgName, setOrgName] = useState('');
 	const [deptName, setDeptName] = useState('');
 	const [skills, setSkills] = useState(initSurvey.user.skills);
-	const [survey, setSurvey] = useState(initSurvey.survey);
 
 	useEffect(() => {
 		const getSurveys = async () => {
@@ -43,18 +42,21 @@ function App() {
 		setDeptName(newValue);
 	};
 
+	const updateSkills = (skillsObject) => setSkills(skillsObject);
+	console.log(skills);
+
 	// Submit Data to Firebase
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setSurvey((prevSurvey) => ({
-			...prevSurvey,
+		const survey = {
 			user: {
 				user_name: userName,
 				org_name: orgName,
 				dept_name: deptName,
 				skills: skills,
 			},
-		}));
+		};
+		console.log(survey);
 		// await setDoc(doc(db, 'survey', v4()), survey);
 	};
 
@@ -108,7 +110,7 @@ function App() {
 					important the following skills:
 					<br />
 				</h3>
-				<Cards skills={skills} />
+				<Cards skills={skills} updateSkills={updateSkills} />
 			</Row>
 			<Row>
 				<Pagination />

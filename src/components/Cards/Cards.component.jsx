@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Stack } from 'react-bootstrap';
 import Card from '../Card/Card.component';
 
-const Cards = ({ skills }) => {
+const Cards = ({ skills, updateSkills }) => {
 	const [skillsObject, setSkillsObject] = useState(skills);
 	const handleSkillsChange = (skills) => {
 		// console.log('Card Skill ->', skills);
@@ -17,14 +17,9 @@ const Cards = ({ skills }) => {
 			},
 		};
 		setSkillsObject(updatedData);
+		updateSkills(updatedData);
 	};
-	/**
-	 * updatedData = {
-	 * 	accountability: [2, 0, 4],
-	 *  people management: [1, 3, 2],
-	 *  confidence: [4, 2, 1]
-	 * }
-	 */
+
 	return (
 		<Stack gap={3}>
 			<div

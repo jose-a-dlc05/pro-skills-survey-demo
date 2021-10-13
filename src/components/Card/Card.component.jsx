@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 import { MDBRange } from 'mdb-react-ui-kit';
 import './Card.styles.css';
@@ -11,18 +11,18 @@ function SkillCard({ skill, handleSkillsChange }) {
 
 	const onChangeImportance = (e) => {
 		setImportanceRange(Number(e.target.value));
-		changeScore();
+		// changeScore();
 	};
 	const onChangeOrg = (e) => {
 		setOrgRange(Number(e.target.value));
-		changeScore();
+		// changeScore();
 	};
 	const onChangeDepartment = (e) => {
 		setDeptRange(Number(e.target.value));
-		changeScore();
+		// changeScore();
 	};
 
-	const changeScore = () => {
+	useEffect(() => {
 		const updatedSkill = {
 			skillName,
 			importanceRange,
@@ -30,7 +30,7 @@ function SkillCard({ skill, handleSkillsChange }) {
 			deptRange,
 		};
 		handleSkillsChange(updatedSkill);
-	};
+	}, [importanceRange, orgRange, deptRange]);
 
 	return (
 		<Card
