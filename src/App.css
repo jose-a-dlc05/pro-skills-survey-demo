@@ -36,3 +36,36 @@
 	position: absolute;
 	top: 1px;
 }
+.paginationBttns {
+	/* width: 80%; */
+	padding: 0;
+	margin: 0 auto;
+	margin-top: 32px;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+.paginationBttns a {
+	padding: 10px;
+	margin: 8px;
+	border-radius: 5px;
+	border: 1px solid #000000;
+	color: #000000;
+	cursor: pointer;
+}
+
+.paginationBttns a:hover {
+	color: white;
+	background-color: #000000;
+}
+
+.paginationActive a {
+	color: white;
+	background-color: #000000;
+}
+
+.paginationDisabled a {
+	color: grey;
+	background-color: grey;
+}

@@ -1,33 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import db from './firebase-config';
-import { collection, getDocs, setDoc, doc } from '@firebase/firestore';
+import { setDoc, doc } from '@firebase/firestore';
 import { Container, Row, Col } from 'react-bootstrap';
 import InputField from './components/InputField/InputField.component';
 import Cards from './components/Cards/Cards.component';
-import Pagination from '../src/components/Pagination/SmallPagination.component';
 import Button from './components/Button/Button.component';
 import { v4 } from 'uuid';
 // import { MDBProgress, MDBProgressBar } from 'mdb-react-ui-kit';
-
 import './App.css';
 import { initSurvey } from './initSurvey';
 
 function App() {
-	const surveyCollectionRef = collection(db, 'surveys');
+	// const surveyCollectionRef = collection(db, 'survey');
 	const [userName, setUserName] = useState('');
 	const [orgName, setOrgName] = useState('');
 	const [deptName, setDeptName] = useState('');
 	const [skills, setSkills] = useState(initSurvey.user.skills);
 
-	useEffect(() => {
-		const getSurveys = async () => {
-			const userSurveyData = await getDocs(surveyCollectionRef);
-			userSurveyData.forEach((doc) => {
-				console.log(doc.id, '=>', doc.data().user);
-			});
-		};
-		// getSurveys();
-	}, []);
+	// useEffect(() => {
+	// 	const getSurveys = async () => {
+	// 		const userSurveyData = await getDocs(surveyCollectionRef);
+	// 		userSurveyData.forEach((doc) => {
+	// 			console.log(doc.id, '=>', doc.data().user);
+	// 		});
+	// 	};
+	// 	// getSurveys();
+	// }, []);
 
 	const onInputUserNameChange = (event) => {
 		const newValue = event.currentTarget.value;
@@ -43,10 +41,9 @@ function App() {
 	};
 
 	const updateSkills = (skillsObject) => setSkills(skillsObject);
-	console.log(skills);
 
 	// Submit Data to Firebase
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const survey = {
 			user: {
@@ -113,7 +110,6 @@ function App() {
 				<Cards skills={skills} updateSkills={updateSkills} />
 			</Row>
 			<Row>
-				<Pagination />
 				<Button onClick={handleSubmit} buttonName='Submit' />
 			</Row>
 		</Container>
