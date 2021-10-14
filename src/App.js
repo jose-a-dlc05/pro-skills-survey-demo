@@ -15,6 +15,7 @@ function App() {
 	const [userName, setUserName] = useState('');
 	const [orgName, setOrgName] = useState('');
 	const [deptName, setDeptName] = useState('');
+	const [email, setEmail] = useState('');
 	const [skills, setSkills] = useState(initSurvey.user.skills);
 
 	// useEffect(() => {
