@@ -11,15 +11,12 @@ function SkillCard({ skill, handleSkillsChange }) {
 
 	const onChangeImportance = (e) => {
 		setImportanceRange(Number(e.target.value));
-		// changeScore();
 	};
 	const onChangeOrg = (e) => {
 		setOrgRange(Number(e.target.value));
-		// changeScore();
 	};
 	const onChangeDepartment = (e) => {
 		setDeptRange(Number(e.target.value));
-		// changeScore();
 	};
 
 	useEffect(() => {
@@ -48,7 +45,6 @@ function SkillCard({ skill, handleSkillsChange }) {
 					style={{
 						fontWeight: 'bold',
 						fontSize: '1.2em',
-						textDecoration: 'underline',
 						marginBottom: '10px',
 					}}
 				>
