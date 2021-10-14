@@ -1,6 +1,14 @@
 import { InputGroup, FormControl } from 'react-bootstrap';
 
-const InputField = ({ inputname, placeholder, onChange }) => {
+const InputField = ({
+	inputname,
+	placeholder,
+	onChange,
+	name,
+	type,
+	maxlength,
+	value,
+}) => {
 	return (
 		<InputGroup className='mb-3'>
 			<InputGroup.Text
@@ -12,10 +20,13 @@ const InputField = ({ inputname, placeholder, onChange }) => {
 			<FormControl
 				aria-label='Default'
 				aria-describedby='inputGroup-sizing-default'
-				type='text'
+				type={type}
 				placeholder={placeholder}
 				className='skills-input form'
 				onChange={onChange}
+				name={name}
+				maxLength={maxlength}
+				value={value}
 			/>
 		</InputGroup>
 	);
