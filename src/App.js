@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import db from './firebase-config';
 import { setDoc, doc } from '@firebase/firestore';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -36,9 +36,9 @@ function App() {
 	const updateSkills = (skillsObject) => setSkills(skillsObject);
 
 	// Submit Data to Firebase
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const survey = {
+		const surveys = {
 			user: {
 				user_name: initialInputState.username,
 				org_name: initialInputState.orgName,
@@ -47,8 +47,7 @@ function App() {
 				skills: skills,
 			},
 		};
-		console.log(survey);
-		// await setDoc(doc(db, 'survey', v4()), survey);
+		await setDoc(doc(db, 'surveys', v4()), surveys);
 		clearState();
 		setSurveyFinished(true);
 	};
