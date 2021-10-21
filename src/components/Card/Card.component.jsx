@@ -56,7 +56,7 @@ function SkillCard({ skill, handleSkillsChange }) {
 					max='5'
 					step='1'
 					id='skillsRange1'
-					label='Important to Organization'
+					label='Importance to Organization'
 					className='range--slider'
 					onChange={onChangeImportance}
 				/>
@@ -66,7 +66,7 @@ function SkillCard({ skill, handleSkillsChange }) {
 					max='5'
 					step='1'
 					id='skillsRange2'
-					label='Level at the organization'
+					label='Skill level at organization'
 					className='range--slider'
 					onChange={onChangeOrg}
 				/>
@@ -76,7 +76,7 @@ function SkillCard({ skill, handleSkillsChange }) {
 					max='5'
 					step='1'
 					id='skillsRange3'
-					label='Level within the department'
+					label='Skill level within your department'
 					className='range--slider'
 					onChange={onChangeDepartment}
 				/>

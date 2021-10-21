@@ -65,7 +65,7 @@ function App() {
 							name='username'
 							type='text'
 							onChange={onChange}
-							maxlength='25'
+							maxlength='100'
 						/>
 						<br />
 						<InputField
@@ -75,7 +75,7 @@ function App() {
 							name='email'
 							onChange={onChange}
 							type='email'
-							maxlength='25'
+							maxlength='100'
 						/>
 						<br />
 						<InputField
@@ -85,7 +85,7 @@ function App() {
 							name='orgName'
 							onChange={onChange}
 							type='text'
-							maxlength='25'
+							maxlength='100'
 						/>
 						<br />
 						<InputField
@@ -95,16 +95,20 @@ function App() {
 							name='deptName'
 							onChange={onChange}
 							type='text'
-							maxlength='25'
+							maxlength='100'
 						/>
 					</Col>
 					<br />
 					<h3>
-						Rate from a scale of <br />
-						0 meaning unskilled/not important <br />
-						5 meaning mastery/very <br />
-						important the following skills:
+						Use the scales to rate the importance or skill from 0 to 5 based on:{' '}
 						<br />
+						{'->'} How significant it is to the organization
+						<br />
+						{'->'} What skill level do you think currently exists at the
+						organization
+						<br />
+						{'->'} What skill level do you think currently exists within your
+						department
 					</h3>
 					<Cards skills={skills} updateSkills={updateSkills} />
 				</Row>
