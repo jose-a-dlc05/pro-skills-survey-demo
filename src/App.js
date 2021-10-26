@@ -11,11 +11,11 @@ import { initSurvey } from './initSurvey';
 import './App.css';
 
 function App() {
-	const [initialInputState, setInputState] = useState({
+	const [inputState, setInputState] = useState({
 		username: '',
 		email: '',
-		orgName: '',
-		deptName: '',
+		orgName: 'Tektronix',
+		deptName: 'Team',
 	});
 	const [skills, setSkills] = useState(initSurvey.user.skills);
 	const [surveyFinished, setSurveyFinished] = useState(false);
@@ -28,7 +28,12 @@ function App() {
 
 	// Returns all values back to initial state
 	const clearState = () => {
-		setInputState({ username: '', email: '', orgName: '', deptName: '' });
+		setInputState({
+			username: '',
+			email: '',
+			orgName: 'Tektronix',
+			deptName: '',
+		});
 		setSkills(initSurvey.user.skills);
 	};
 
@@ -40,10 +45,10 @@ function App() {
 		e.preventDefault();
 		const surveys = {
 			user: {
-				user_name: initialInputState.username,
-				org_name: initialInputState.orgName,
-				dept_name: initialInputState.deptName,
-				email: initialInputState.email,
+				user_name: inputState.username,
+				org_name: inputState.orgName,
+				dept_name: inputState.deptName,
+				email: inputState.email,
 				skills: skills,
 			},
 		};
@@ -56,12 +61,12 @@ function App() {
 			<Container fluid className='App'>
 				<Row>
 					<Col>
-						<h1>Professional Skills Survey</h1>
+						<h1>Fortive9 Skills Survey</h1>
 
 						<InputField
 							inputname='Name'
 							placeholder='Enter name'
-							value={initialInputState.username}
+							value={inputState.username}
 							name='username'
 							type='text'
 							onChange={onChange}
@@ -71,7 +76,7 @@ function App() {
 						<InputField
 							inputname='Email'
 							placeholder='Enter email address'
-							value={initialInputState.email}
+							value={inputState.email}
 							name='email'
 							onChange={onChange}
 							type='email'
@@ -79,9 +84,9 @@ function App() {
 						/>
 						<br />
 						<InputField
-							inputname='Company Name'
-							placeholder='Enter org. name'
-							value={initialInputState.orgName}
+							inputname='Organization'
+							placeholder='Enter name of org.'
+							value={inputState.orgName}
 							name='orgName'
 							onChange={onChange}
 							type='text'
@@ -89,9 +94,9 @@ function App() {
 						/>
 						<br />
 						<InputField
-							inputname='Dept. Name'
-							placeholder='Enter dept. name'
-							value={initialInputState.deptName}
+							inputname='Your team'
+							placeholder='Enter your team name'
+							value={inputState.deptName}
 							name='deptName'
 							onChange={onChange}
 							type='text'
@@ -110,7 +115,11 @@ function App() {
 						{'->'} What skill level do you think currently exists within your
 						department
 					</h3>
-					<Cards skills={skills} updateSkills={updateSkills} />
+					<Cards
+						skills={skills}
+						updateSkills={updateSkills}
+						inputState={inputState}
+					/>
 				</Row>
 				<Row>
 					<Button buttonName='Submit' onClick={handleSubmit} />

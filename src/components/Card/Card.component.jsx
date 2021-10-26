@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 import { MDBRange } from 'mdb-react-ui-kit';
 import './Card.styles.css';
 
-function SkillCard({ skill, handleSkillsChange }) {
+function SkillCard({ skill, handleSkillsChange, inputState }) {
 	const [skillName, setSkillName] = useState(skill[0]);
 	const [importanceRange, setImportanceRange] = useState(skill[1].self);
 	const [orgRange, setOrgRange] = useState(skill[1].organization);
@@ -66,7 +66,7 @@ function SkillCard({ skill, handleSkillsChange }) {
 					max='5'
 					step='1'
 					id='skillsRange2'
-					label='Skill level at organization'
+					label={`${inputState.orgName}'s skill level`}
 					className='range--slider'
 					onChange={onChangeOrg}
 				/>
@@ -76,7 +76,7 @@ function SkillCard({ skill, handleSkillsChange }) {
 					max='5'
 					step='1'
 					id='skillsRange3'
-					label='Skill level within your department'
+					label={`${inputState.deptName}'s skill level`}
 					className='range--slider'
 					onChange={onChangeDepartment}
 				/>

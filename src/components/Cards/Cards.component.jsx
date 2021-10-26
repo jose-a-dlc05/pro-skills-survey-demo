@@ -3,7 +3,7 @@ import { Stack } from 'react-bootstrap';
 import Card from '../Card/Card.component';
 import ReactPaginate from 'react-paginate';
 
-const Cards = ({ skills, updateSkills }) => {
+const Cards = ({ skills, updateSkills, inputState }) => {
 	const [skillsObject, setSkillsObject] = useState(skills);
 	const [pageNumber, setPageNumber] = useState(0);
 
@@ -32,6 +32,7 @@ const Cards = ({ skills, updateSkills }) => {
 					key={key}
 					skill={[key, value]}
 					handleSkillsChange={handleSkillsChange}
+					inputState={inputState}
 				/>
 			);
 		});
