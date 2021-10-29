@@ -85,7 +85,7 @@ function App() {
 						<br />
 						<InputField
 							inputname='Organization'
-							placeholder='Enter name of org.'
+							placeholder='Tektronix'
 							value={inputState.orgName}
 							name='orgName'
 							onChange={onChange}
@@ -95,7 +95,7 @@ function App() {
 						<br />
 						<InputField
 							inputname='Your team'
-							placeholder='Enter your team name'
+							placeholder='Team'
 							value={inputState.deptName}
 							name='deptName'
 							onChange={onChange}
