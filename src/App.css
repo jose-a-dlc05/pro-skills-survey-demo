@@ -70,6 +70,19 @@
 	background-color: grey;
 }
 
-li {
-	list-style-type: none;
+.survey-description {
+	margin: 0 auto;
+}
+.survey-description ul {
+	text-align: left;
+	width: 38%;
+	margin: 0 auto;
+}
+.survey-description ul li {
+	list-style-type: circle;
+	margin-top: 10px;
+}
+
+.subheader {
+	text-decoration: underline;
 }

@@ -104,23 +104,24 @@ function App() {
 						/>
 					</Col>
 					<br />
-					<h3>
-						Use the scales to rate the importance or skill from 0 to 5 based on:{' '}
+					<h5 className='survey-description'>
 						<ul>
-							<br />
+							Use the scales to rate the importance or skill from 0 to 5 based
+							on:
 							<li>How significant it is to the organization</li>
-							<br />
 							<li>
 								What skill level do you think currently exists at the
 								organization
 							</li>
-							<br />
 							<li>
 								What skill level do you think currently exists within your
 								department
 							</li>
 						</ul>
-					</h3>
+					</h5>
+					<h5 className='subheader'>
+						These skills are a subset of the Fortive9
+					</h5>
 					<Cards
 						skills={skills}
 						updateSkills={updateSkills}
