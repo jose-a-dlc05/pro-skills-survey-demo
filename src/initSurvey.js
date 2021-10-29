@@ -14,7 +14,7 @@ export const initSurvey = {
 			Accountability: { department: 0, organization: 0, self: 0 },
 			'Analytical skills': { department: 0, organization: 0, self: 0 },
 			Mentorship: { department: 0, organization: 0, self: 0 },
-			People_management: { department: 0, organization: 0, self: 0 },
+			'People management': { department: 0, organization: 0, self: 0 },
 			Delegation: { department: 0, organization: 0, self: 0 },
 			'Goal-setting': { department: 0, organization: 0, self: 0 },
 			'Stress-management': { department: 0, organization: 0, self: 0 },
