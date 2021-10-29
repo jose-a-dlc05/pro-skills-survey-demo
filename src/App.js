@@ -106,14 +106,20 @@ function App() {
 					<br />
 					<h3>
 						Use the scales to rate the importance or skill from 0 to 5 based on:{' '}
-						<br />
-						{'->'} How significant it is to the organization
-						<br />
-						{'->'} What skill level do you think currently exists at the
-						organization
-						<br />
-						{'->'} What skill level do you think currently exists within your
-						department
+						<ul>
+							<br />
+							<li>How significant it is to the organization</li>
+							<br />
+							<li>
+								What skill level do you think currently exists at the
+								organization
+							</li>
+							<br />
+							<li>
+								What skill level do you think currently exists within your
+								department
+							</li>
+						</ul>
 					</h3>
 					<Cards
 						skills={skills}

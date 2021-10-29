@@ -56,7 +56,7 @@ function SkillCard({ skill, handleSkillsChange, inputState }) {
 					max='5'
 					step='1'
 					id='skillsRange1'
-					label='Importance to Organization'
+					label={`Importance to ${inputState.orgName}`}
 					className='range--slider'
 					onChange={onChangeImportance}
 				/>
