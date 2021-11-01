@@ -14,8 +14,8 @@ function App() {
 	const [inputState, setInputState] = useState({
 		username: '',
 		email: '',
-		orgName: 'Tektronix',
-		deptName: 'Team',
+		orgName: 'Organization',
+		deptName: 'Department',
 	});
 	const [skills, setSkills] = useState(initSurvey.user.skills);
 	const [surveyFinished, setSurveyFinished] = useState(false);
@@ -31,7 +31,7 @@ function App() {
 		setInputState({
 			username: '',
 			email: '',
-			orgName: 'Tektronix',
+			orgName: '',
 			deptName: '',
 		});
 		setSkills(initSurvey.user.skills);
@@ -61,7 +61,7 @@ function App() {
 			<Container fluid className='App'>
 				<Row>
 					<Col>
-						<h1>Fortive9 Skills Survey</h1>
+						<h1>Pro Skills Survey</h1>
 
 						<InputField
 							inputname='Name'
@@ -118,9 +118,6 @@ function App() {
 								department
 							</li>
 						</ul>
-					</h5>
-					<h5 className='subheader'>
-						These skills are a subset of the Fortive9
 					</h5>
 					<Cards
 						skills={skills}
